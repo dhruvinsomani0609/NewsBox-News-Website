@@ -1,0 +1,155 @@
+/* main post side content start*/
+.main_side_sec:hover,
+.new_side_sec:hover {
+    /* transform: scale3d(1.02) translateY(-5px); */
+    transform: scale3d(1.1, 1.05, 1.05);
+}
+
+/* main post side content end */
+
+/*** Top News Start ***/
+.news-2 h3 {
+    position: relative;
+}
+
+.news-2 h3::after {
+    content: "";
+    line-height: 1.3rem;
+    background: var(--bs-secondary);
+    position: absolute;
+    width: 68%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1px;
+    right: 0;
+    opacity: 0.2;
+}
+
+/*** Top News End ***/
+
+
+/*** Latest News Start ***/
+/* Carousel Layout */
+.latest-news .latest-news-carousel.owl-carousel {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 8px;
+}
+
+
+/* News Item Card Styles */
+.latest-news-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.latest-news-item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: black;
+    transition: height 0.1s ease-in-out;
+    z-index: 0;
+}
+
+/* News Item Hover Effects */
+.latest-news-item:hover {
+    transform: scale(1.04);
+}
+
+.latest-news-item:hover::before {
+    height: 100%;
+}
+
+/* Content Styles */
+.latest-news-item .content {
+    position: relative;
+    z-index: 1;
+}
+
+.latest-news-item:hover .content,
+.latest-news-item:hover .h4,
+.latest-news-item:hover .small,
+.latest-news-item:hover .date {
+    color: white !important;
+    border-radius: 20px;
+}
+
+/* Image Zoom Effect */
+.latest-news-item .img-zoomin {
+    transition: transform 0.8s ease-in-out;
+}
+
+.latest-news-item:hover .img-zoomin {
+    transform: scale(1.04);
+}
+
+/* Ensure content remains visible during hover */
+.latest-news-item .rounded {
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional: Add smooth shadow on hover */
+.latest-news-item:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control-next-icon {
+    background-color: black;
+    border-radius: 50%;
+    padding: 10px;
+
+}
+
+.carousel-control-prev-icon {
+    background-color: black;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+@media (max-width: 786px) {
+    /* Adjust the layout of the latest news carousel */
+    .latest-news .latest-news-carousel.owl-carousel {
+        /* No need for flex-direction: column; as Owl Carousel handles layout */
+        align-items: center; /* Center items */
+    }
+
+    /* Style for each news item */
+    .latest-news-item {
+        width: 100%; /* Make each item take full width */
+        margin-bottom: 16px; /* Add some space between items */
+    }
+
+    /* Adjust the hover effect */
+    .latest-news-item:hover {
+        transform: scale(1.02); /* Reduce scale effect on hover */
+    }
+
+    /* Ensure the content is readable */
+    .latest-news-item .content {
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    /* Adjust the font sizes for better readability */
+    .latest-news-item .content h4 {
+        font-size: 1.2rem; /* Adjust heading size */
+    }
+
+    .latest-news-item .content .small,
+    .latest-news-item .content .date {
+        font-size: 0.9rem; /* Adjust small text size */
+    }
+
+    /* Adjust the carousel controls */
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        padding: 8px; /* Reduce padding for smaller screens */
+    }
+}
+/*** Latest News End ***/
+

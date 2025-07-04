@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsBox</title>
+
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- For .ico files -->
+
+        <!-- Include jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Include Owl Carousel CSS -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+        <!-- Include Owl Carousel JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <style>
+        #google_translate_element {
+            height: 35px !important;
+            width: 110px;
+            line-height: 0px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+        }
+
+        #google_translate_element:hover {
+            cursor: pointer;
+        }
+    </style>
+        <link rel="stylesheet" href="/css/nav.css">
+        <link rel="stylesheet" href="/css/top_news.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="css/other_page.css">
+    <link rel="stylesheet" href="css/google_translate.css">
+    </head>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="hey bg-dark text-white py-3">
+        <div class="container d-flex justify-content-around  align-items-center">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="/img/logo.png" alt="logo">
+                <a href="index.html" class="navbar-brand">
+                    <h2>NewsBox</h2>
+                </a>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <div class="navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="navbarItem nav-item">
+                                <a class="nav-link" data-category="index.html" href="index.html">Home</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="politics">
+                                <a class="nav-link" data-category="national">Politics</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="sport">
+                                <a class="nav-link" data-category="sports">Sport</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="business">
+                                <a class="nav-link" data-category="business">Business</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="technology">
+                                <a class="nav-link" data-category="technology">Technology</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="health">
+                                <a class="nav-link" data-category="health">Health</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="education">
+                                <a class="nav-link" data-category="education">Education</a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Search Box -->
+            <input id="search-text" class="form-control me-2 searchbox" type="search" placeholder="Search Trending..."
+                aria-label="Search">
+            <button id="search-button" class="btn btn-outline-light me-3 searchBtn" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+
+            <!-- Menu Button -->
+            <div class="menudiv">
+                <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#newsSidebar"
+                    aria-controls="newsSidebar" type="button">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+
+
+            <!-- Offcanvas Sidebar -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="newsSidebar" aria-labelledby="newsSidebarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="newsSidebarLabel">News Categories</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    
+                    <div class="sidebar-nav">
+                        <!-- News update Navigation -->
+                        <div class="section-title text-white">NEWS UPDATES</div>
+                        <div class="nav-section">
+                            <nav class="nav flex-row">
+                                <div class="section">
+                                    <a class="nav-link" data-category="live"><i class="ri-tv-line"></i><span>Live TV</span></a>
+                                    <a class="nav-link" data-category="latest"><i class="ri-article-line"></i><span>Latest</span></a>
+                                    <a class="nav-link" data-category="profit"><i class="ri-line-chart-line"></i><span>Profit</span></a>
+                                    <a class="nav-link" data-category="cricket"><i class="fas fa-basketball-ball"></i><span>Cricket</span></a>
+                                </div>
+                                <div class="section">
+                                    <a class="nav-link" data-category="india"><i class="ri-map-pin-line"></i><span>India</span></a>
+                                    <a class="nav-link" data-category="video"><i class="ri-video-line"></i><span>Video</span></a>
+                                    <a class="nav-link" data-category="movies"><i class="ri-film-line"></i><span>Movies</span></a>
+                                    <a class="nav-link" data-category="cities"><i class="ri-building-line"></i><span>Cities</span></a>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="sidebar-divider"></div>
+                        <!-- Featured Section -->
+                        <div class="section-title text-white">Featured</div>
+                        <div class="nav-section">
+                            <nav class="nav flex-row">
+                                <a class="nav-link" data-category="elections"><i class="ri-government-line"></i><span>Elections</span></a>
+                                <a class="nav-link" data-category="opinion"><i class="ri-chat-1-line"></i><span>Opinion</span></a>
+                                <a class="nav-link" data-category="trends"><i class="ri-fire-line"></i><span>Trends</span></a>
+                                <a class="nav-link" data-category="notifications"><i class="ri-notification-3-line"></i><span>Notifications</span></a>
+                                <a class="nav-link" data-category="web-stories"><i class="ri-pages-line"></i><span>Web Stories</span></a>
+                                <a class="nav-link" data-category="feature"><i class="ri-layout-grid-line"></i><span>Feature</span></a>
+                            </nav>
+                            
+                        </div>
+                
+                        <div class="sidebar-divider"></div>
+                        <!-- More Links Section -->
+                        <div class="section-title text-white">More Links</div>
+                        <div class="nav-section">
+                            <nav class="nav flex-row">
+                                    <a class="nav-link" data-category="agriculture"><i class="ri-article-line"></i><span>Agriculture</span></a>
+                                    <a class="nav-link" data-category="space"><i class="ri-map-pin-line"></i><span>Space</span></a>
+                                    <a class="nav-link" data-category="science"><i class="ri-earth-line"></i><span>Science</span></a>
+                                    <a class="nav-link" data-category="people"><i class="ri-team-line"></i><span>People</span></a>
+                                    <a class="nav-link" data-category="education"><i class="ri-book-open-line"></i><span>Education</span></a>
+                                    <a class="nav-link" data-category="food"><i class="ri-restaurant-line"></i><span>Food</span></a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </header>
+
+    <!-- Trending Topics Slider -->
+    <div class="hey container topbar bg-dark d-lg-block my-4 rounded-pill">
+        <div class="container px-4">
+            <div class="topbar-top d-flex justify-content-between flex-lg-wrap">
+                <div class="top-info d-flex align-items-center flex-grow-1">
+                    <span class="rounded-circle btn-sm-square bg-dark me-2">
+                        <i class="fas fa-bolt text-warning"></i>
+                    </span>
+                    <div class="pe-2 me-3 border-end border-white d-flex align-items-center">
+                        <p class="mb-0 text-white fs-6 fw-normal trending">Trending</p>
+                    </div>
+                    <div class="overflow-hidden flex-grow-1">
+                        <div id="note" class="ps-2">
+                            <img src="img/features-fashion.jpg"
+                                class="img-fluid rounded-circle border border-3 border-primary me-2"
+                                style="width: 30px; height: 30px;" alt="">
+                            <a href="#" class="text-white mb-0 link-hover">
+                                <p class="mb-0 news-text text-white">Will India gain as Trump points tariff bazooka at
+                                    China?</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Post Section Start -->
+    <div class="hey container-fluid py-3">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-7 col-xl-8 mt-0">
+                    <div class="position-relative overflow-hidden rounded">
+                        <img src="https://images.moneycontrol.com/static-mcnews/2024/11/20241128120006_Devendra-Fadnavis-Mahayuti.jpg?impolicy=website&width=770&height=431" class="img-fluid rounded img-zoomin w-100" alt="">
+                        <div class="d-flex justify-content-center px-4 position-absolute flex-wrap"
+                            style="bottom: 10px; left: 0;">
+                            <a href="#" class="text-white me-3 link-hover"><i class="fa fa-clock"></i> 06 minute
+                                read</a>
+                            <a href="#" class="text-white me-3 link-hover"><i class="fa fa-eye"></i> 3.5k Views</a>
+                            <a href="#" class="text-white me-3 link-hover"><i class="fa fa-comment-dots"></i> 05
+                                Comment</a>
+                            <a href="#" class="text-white link-hover"><i class="fa fa-arrow-up"></i> 1.5k Share</a>
+                        </div>
+                    </div>
+                    <div class="border-bottom py-3">
+                        <a href="https://www.moneycontrol.com/news/india/maharashtra-new-cm-announcement-live-devendra-fadnavis-eknath-shinde-ajit-pawar-portfolios-2-liveblog-12880078.html" class="display-4 text-dark mb-0 link-hover">
+                            No government in Maharashtra for next eight days, says Ambadas Danve</a>
+                    </div>
+                    <p class="mt-3 mb-4">Maharashtra CM News Live: Ambadas Danve stated that Maharashtra's government formation will be delayed by eight days due to leadership issues within the BJP, and local elections will be decided based on party workers' sentiments
+                    </p>
+                    <div class="bg-light p-4 rounded">
+                        <div class="news-2">
+                            <h3 class="mb-4">Top Story</h3>
+                        </div>
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-6">
+                                <div class="rounded overflow-hidden">
+                                    <img src="https://th-i.thgim.com/public/incoming/z62s19/article68930675.ece/alternates/LANDSCAPE_1200/IMG_APTOPIX_Bangladesh_H_2_1_MODL3O3Q.jpg" class="img-fluid rounded img-zoomin w-100" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex flex-column">
+                                    <a href="https://www.thehindu.com/news/national/stop-atrocities-on-hindus-immediately-release-iskcon-monk-from-jail-rss-to-bangladesh-interim-govt/article68930655.ece" class="h3">Stop atrocities on Hindus immediately, release ISKCON monk from jail: RSS to Bangladesh interim govt</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- main post side section start -->
+                <div class="col-lg-5 col-xl-4 gap-3">
+                    <div class="bg-light rounded p-4 pt-0">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="rounded overflow-hidden">
+                                    <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/2db9/live/fd162480-ae9d-11ef-b2ef-ebf65ac1b3d1.jpg.webp" class="img-fluid rounded img-zoomin w-100" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex flex-column">
+                                    <a href="https://www.bbc.com/news/articles/cm27247j6gno" class="h4 mb-2">Major
+                                        Canadian news outlets sue OpenAI</a>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row g-4 align-items-center main_side_sec">
+                                    <div class="col-5">
+                                        <div class="overflow-hidden rounded">
+                                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/b7ed/live/15f3c540-91ff-11ef-9140-af626246800c.jpg.webp" class="img-zoomin img-fluid rounded w-100" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="features-content d-flex flex-column">
+                                            <a href="https://www.bbc.com/news/articles/czeg2p3wjy1o"
+                                                class="h6">'Everything's on fire' - another tough year for
+                                                developers</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row g-4 align-items-center main_side_sec">
+                                    <div class="col-5">
+                                        <div class="overflow-hidden rounded">
+                                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/daaa/live/6a039a40-ad73-11ef-967f-cbb1965d6a73.png.webp" class="img-zoomin img-fluid rounded w-100" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="features-content d-flex flex-column">
+                                            <a href="https://www.bbc.com/news/articles/cly23yknjy9o" class="h6">A fatal
+                                                car crash in India sparks concerns over
+                                                Google Maps.</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row g-4 align-items-center main_side_sec">
+                                    <div class="col-5">
+                                        <div class="overflow-hidden rounded">
+                                            <img src="img/news-5.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="features-content d-flex flex-column">
+                                            <a href="https://www.bbc.com/news/articles/c89vjj0lxx9o"
+                                                class="h6">Australia approves social media ban on under-16s</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row g-4 align-items-center main_side_sec">
+                                    <div class="col-5">
+                                        <div class="overflow-hidden rounded">
+                                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/9294/live/e16d41f0-ad44-11ef-87a9-132e8441ea9c.jpg.webp" class="img-zoomin img-fluid rounded w-100" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="features-content d-flex flex-column">
+                                            <a href="https://www.bbc.com/future/article/20241120-chinas-ant-forest-users-cheat-in-game-that-helps-the-climate"
+                                                class="h6">How 'addicted' gamers are cheating a Chinese app
+                                                designed to help the climate</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row g-4 align-items-center main_side_sec">
+                                    <div class="col-5">
+                                        <div class="overflow-hidden rounded">
+                                            <img src="https://ichef.bbci.co.uk/images/ic/1024xn/p0k4wzjn.jpg.webp" class="img-zoomin img-fluid rounded w-100" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="features-content d-flex flex-column">
+                                            <a href="https://www.bbc.com/future/article/20241115-how-robotaxis-are-trying-to-win-passengers-trust"
+                                                class="h6">How robotaxis are trying to win passengers'
+                                                trust.</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row g-4 align-items-center main_side_sec">
+                                    <div class="col-5">
+                                        <div class="overflow-hidden rounded">
+                                            <img src="https://ichef.bbci.co.uk/images/ic/1024xn/p0k5prd2.jpg.webp" class="img-zoomin img-fluid rounded w-100" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="features-content d-flex flex-column">
+                                            <a href="https://www.bbc.com/future/article/20230306-just-how-loud-is-a-rocket-launch"
+                                                class="h6">Get the best speak market, news.Is SpaceX's Starship
+                                                the loudest ever rocket?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main post side section end -->
+        </div>
+    </div>
+    <!-- Main Post Section End -->
+
+
+    <!-- Latest News Start -->
+    <div class="hey container-fluid latest-news pt-3 pb-4">
+        <div class="container">
+            <h2 class="mb-4">Latest News</h2>
+            <div class="latest-news-carousel owl-carousel">
+                <div class="latest-news-item">
+                    <div class="news-card rounded">
+                        <div class="rounded-top overflow-hidden">
+                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/7429/live/1acd68a0-aece-11ef-8e2a-0fad29066823.jpg.webp" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="d-flex flex-column p-4">
+                            <a href="https://www.bbc.com/news/articles/c62jp68p315o" class="h4">Police use water cannon
+                                as Georgia EU protests erupt for second
+                                night</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="latest-news-item">
+                    <div class="news-card rounded">
+                        <div class="rounded-top overflow-hidden">
+                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/eab1/live/0a129000-ae9a-11ef-bdf5-b7cb2fa86e10.jpg.webp" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="d-flex flex-column p-4">
+                            <a href="https://www.bbc.com/news/articles/cn8g8ylvyldo" class="h4">Zelensky suggests war
+                                could end if unoccupied Ukraine comes under
+                                Nato.</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="latest-news-item">
+                    <div class="news-card rounded">
+                        <div class="rounded-top overflow-hidden">
+                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/b1ee/live/bc6db850-ad79-11ef-a54d-75e6a7720568.jpg.webp" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="d-flex flex-column p-4">
+                            <a href="https://www.bbc.com/news/articles/cx27re7qq33o" class="h4">Al Fayed 'used cash gifts in bid to own directors'</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="latest-news-item">
+                    <div class="news-card rounded">
+                        <div class="rounded-top overflow-hidden">
+                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/9975/live/b22229e0-ad5a-11ef-83bc-1153ed943d1c.jpg.webp" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="d-flex flex-column p-4">
+                            <a href="https://www.bbc.com/news/articles/cvg02lvj1e7o" class="h4">Bushra Bibi led a
+                                protest to free Imran Khan - what happened next is
+                                a mystery</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="latest-news-item">
+                    <div class="news-card rounded">
+                        <div class="rounded-top overflow-hidden">
+                            <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/a003/live/dc55dd90-ae56-11ef-a4be-fb03c4435021.jpg.webp" class="img-zoomin img-fluid rounded-top w-100" alt="">
+                        </div>
+                        <div class="d-flex flex-column p-4">
+                            <a href="https://www.bbc.co.uk/news/articles/crk4g3zddexo" class="h4 ">Are the drones
+                                lighting up US bases in England something sinister?
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Latest News End -->
+
+
+    <!-- Most Populer News Start -->
+    <div class="hey container-fluid populer-news py-3">
+        <div class="container py-5">
+            <div class="tab-class mb-4">
+                <div class="row g-4">
+                    <div class="col-lg-8 col-xl-9">
+                        <!-- What's new section -->
+                        <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mb-4">
+                            <h1 class="mb-4">What’s New</h1>
+                            <!-- What' new list starts -->
+                            <ul class="nav nav-pills d-inline-flex text-center">
+                                <li class="nav-what-item mb-3">
+                                    <a class="d-flex py-2 bg-dark text-white rounded-pill active me-2"
+                                        data-bs-toggle="pill" href="#tab-1">
+                                        <span style="width: 100px;">Sports</span>
+                                    </a>
+                                </li>
+                                <li class="nav-what-item mb-3">
+                                    <a class="d-flex py-2 bg-light text-dark rounded-pill inactive me-2"
+                                        data-bs-toggle="pill" href="#tab-2">
+                                        <span style="width: 100px;">Business</span>
+                                    </a>
+                                </li>
+                                <li class="nav-what-item mb-3">
+                                    <a class="d-flex py-2 bg-light text-dark rounded-pill me-2" data-bs-toggle="pill"
+                                        href="#tab-3">
+                                        <span style="width: 100px;">Politics</span>
+                                    </a>
+                                </li>
+                                <li class="nav-what-item mb-3">
+                                    <a class="d-flex py-2 bg-light text-dark rounded-pill me-2" data-bs-toggle="pill"
+                                        href="#tab-4">
+                                        <span style="width: 100px;">Technology</span>
+                                    </a>
+                                </li>
+                                <li class="nav-what-item mb-3">
+                                    <a class="d-flex py-2 bg-light text-dark rounded-pill me-2" data-bs-toggle="pill"
+                                        href="#tab-5">
+                                        <span style="width: 100px;">Fashion</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content mb-4">
+                            <!-- sports section -->
+                            <div id="tab-1" class="tab-pane fade show p-0 active">
+                                <div class="row g-4">
+                                    <div class="col-lg-8">
+                                        <div class="position-relative rounded overflow-hidden">
+                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/icc-champions-trophy-photo-by-andrew-matthewspa-images-via-getty-images-285746621-16x9_4.jpg?VersionId=B6EMDayDa9usFL5HaFNO7u5vqIW70MuI&size=690:388" class="img-zoomin img-fluid rounded w-100" alt="">
+                                            <div class="position-absolute text-white px-4 py-2 bg-dark rounded"
+                                                style="top: 20px; right: 20px;">
+                                                Sports
+                                            </div>
+                                        </div>
+                                        <div class="my-4">
+                                            <a href="https://www.indiatoday.in/sports/cricket/story/champions-trophy-pakistan-cricket-board-vs-bcci-hybrid-model-hosting-sources-2642753-2024-11-30"
+                                                class="h4">Champions Trophy: Pakistan likely to accept hybrid
+                                                model, but with conditions</a>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <a href="#" class="text-dark link-hover me-3"><i class="fa fa-clock"></i> 06
+                                                minute read</a>
+                                            <a href="#" class="text-dark link-hover me-3"><i class="fa fa-eye"></i> 3.5k
+                                                Views</a>
+                                            <a href="#" class="text-dark link-hover me-3"><i
+                                                    class="fa fa-comment-dots"></i> 05 Comment</a>
+                                            <a href="#" class="text-dark link-hover"><i class="fa fa-arrow-up"></i> 1.5k
+                                                Share</a>
+                                        </div>
+                                        <p class="my-4">The Pakistan Cricket Board (PCB) has reportedly agreed to a
+                                            hybrid hosting model for the ICC Champions Trophy 2025. Sources indicate
+                                            that under the leadership of Mohsin Naqvi, the PCB has stipulated that if
+                                            India fails to progress in the tournament, the final will be held in Lahore.
+                                        </p>
+                                    </div>
+                                    <!-- what's new side section start -->
+                                    <div class="col-lg-4">
+                                        <div class="row g-4">
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center new_side_sec">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/marco-jansen-304940141-16x9_0.jpg?VersionId=PbgEk9Yhf7jguF5xDYcWKUBbRr_e8k.5&size=690:388"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Sports</p>
+                                                            <a href="https://www.indiatoday.in/sports/cricket/story/south-africa-durban-test-win-sri-lanka-marco-jansen-eleven-wicket-haul-tristan-stubbs-bavumba-2642833-2024-11-30"
+                                                                class="h6">SA vs SL: Test win</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center new_side_sec">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/australia-vs-india--ap-phototrevor-collens-282431522-16x9_3.jpg?VersionId=VJ2kv3akq6i37KwHbneNkGUbfVzgBWGx&size=690:388"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Sports</p>
+                                                            <a href="https://www.indiatoday.in/sports/story/cricket-anthony-albanese-india-vs-australia-ashes-border-gavaskar-trophy-2024-2642711-2024-11-30"
+                                                                class="h6">India vs Australia rivalry bigger
+                                                                than the Ashes: Australian PM Anthony Albanese</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center new_side_sec">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/f74a/live/c728ee40-aea5-11ef-8abe-f1bad048f350.jpg.webp"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Sports</p>
+                                                            <a href="https://www.bbc.com/sport/formula1/articles/cx2d2k05448o"
+                                                                class="h6">Hamilton says he is 'definitely not
+                                                                fast any more'</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center new_side_sec">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/992f/live/5ab3ac10-aedb-11ef-93a6-9fd2d3586a96.jpg.webp"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Sports</p>
+                                                            <a href="https://www.bbc.com/sport/cricket/articles/cz0m0ln43mxo"
+                                                                class="h6">England close on victory in first
+                                                                Test against New Zealand.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center new_side_sec">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/9bad/live/ec219a70-aeba-11ef-9ac1-db300ad50040.jpg.webp"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Sport</p>
+                                                            <a href="https://www.bbc.com/sport/cricket/articles/c8jyj98wml2o"
+                                                                class="h6">Australia call up uncapped duo after
+                                                                Hazlewood injuryGet the best speak market, news.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- what's new side section end -->
+                                </div>
+                            </div>
+                            <!-- business section -->
+                            <div id="tab-2" class="tab-pane fade show p-0">
+                                <div class="row g-4">
+                                    <div class="col-lg-8">
+                                        <div class="position-relative rounded overflow-hidden">
+                                            <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202411/674adcb06987b-many-of-these-companies-will-also-announce-record-dates-for-dividends--which-determine-which-shareho-30361519-16x9.jpg?size=948:533" class="img-zoomin img-fluid rounded w-100" alt="">
+                                            <div class="position-absolute text-white px-4 py-2 bg-dark rounded"
+                                                style="top: 20px; right: 20px;">
+                                                Business
+                                            </div>
+                                        </div>
+                                        <div class="my-3">
+                                            <a href="https://www.businesstoday.in/markets/stocks/story/wipro-eraaya-lifespaces-and-can-fin-homes-among-stocks-turning-ex-dividend-next-week-455740-2024-11-30"
+                                                class="h4">Wipro, Eraaya Lifespaces and Can Fin Homes among
+                                                stocks turning ex-dividend next week</a>
+                                        </div>
+                                        <p class="mt-4">More than 10 companies will have their shares trade ex-dividend,
+                                            with actions such as dividend payouts, bonus issues, amalgamations, and
+                                            stock splits scheduled for the next five days.Investors on Dalal Street will
+                                            be keeping a close eye on companies such as Wipro, Can Fin Homes, Phoenix
+                                            Township Ltd, Eraaya Lifespaces, and Diamond Power Infrastructure in the
+                                            upcoming week. More than 10 companies will have their shares trade
+                                            ex-dividend, with actions such as dividend payouts, bonus issues,
+                                            amalgamations, and stock splits scheduled for the next five days.
+                                        </p>
+                                        <div class="d-flex justify-content-between">
+                                            <a href="#" class="text-dark link-hover me-3"><i class="fa fa-clock"></i> 06
+                                                minute read</a>
+                                            <a href="#" class="text-dark link-hover me-3"><i class="fa fa-eye"></i> 3.5k
+                                                Views</a>
+                                            <a href="#" class="text-dark link-hover me-3"><i
+                                                    class="fa fa-comment-dots"></i> 05 Comment</a>
+                                            <a href="#" class="text-dark link-hover"><i class="fa fa-arrow-up"></i> 1.5k
+                                                Share</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="row g-4">
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-02/28/full/1709128767-0356.jpg?im=FeatureCrop,size=(826,465)"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Business</p>
+                                                            <a href="https://www.businesstoday.in/magazine/cover-story/story/reliance-disney-jv-a-media-titan-arrives-on-the-indian-scene-455691-2024-11-29"
+                                                                class="h6">Reliance-Disney JV: A media titan
+                                                                arrives on the Indian scene.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202411/674ac6a853084-a-bear-market-is-the-real-test-of-your-strategy-and-behaviour-300241955-16x9.png?size=948:533"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Business</p>
+                                                            <a href="https://www.businesstoday.in/personal-finance/investment/story/2025-will-be-challenging-for-equity-markets-but-familiar-says-nikhil-gangil-of-intrinsic-value-455725-2024-11-30#:~:text=The%20year%202025%20can%20be,Overhyped%20pockets%20than%20Undervalued%20assets."
+                                                                class="h6">2025 will be challenging for equity
+                                                                markets.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202411/674aa56ad71a3-google-deepmind-275805285-16x9.jpg?size=948:533"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Business</p>
+                                                            <a href="https://www.businesstoday.in/technology/news/story/ai-that-mirrors-you-google-deepminds-new-tech-blurs-line-between-human-and-machine-455707-2024-11-30#:~:text=Dubbed%20%E2%80%9Cpersonality%20agents%2C%E2%80%9D%20the,%25%20accuracy%2C%20according%20to%20researchers."
+                                                                class="h6">AI that mirrors you: Google
+                                                                DeepMind’s new tech blurs line between human and
+                                                                machine</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://static.toiimg.com/thumb/msid-115685554,imgsize-39896,width-400,resizemode-4/115685554.jpg"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Business</p>
+                                                            <a href="https://timesofindia.indiatimes.com/business/india-business/what-is-pan-2-0-project-will-you-have-to-apply-for-a-new-pan-card-with-qr-code/articleshow/115678638.cms"
+                                                                class="h6">Get the best speak market, news.PAN
+                                                                2.0: How to submit details oraded
+                                                                PAN carnline to get the upgd</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202411/674aac763feef-sbi-mutual-fund-house-is-one-of-the-oldest-fund-houses-in-india-that-manages-a-variety-of-schemes-ac-301056826-16x9.jpg?size=948:533"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Business</p>
+                                                            <a href="https://www.businesstoday.in/personal-finance/investment/story/mutual-funds-sbi-infrastructure-fund-sbi-long-term-equity-sbi-contra-fund-under-focus-check-returns-455717-2024-11-30"
+                                                                class="h6">Mutual funds: SBI Infrastructure
+                                                                Fund.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- politics section -->
+                            <div id="tab-3" class="tab-pane fade show p-0">
+                                <div class="row g-4">
+                                    <div class="col-lg-8">
+                                        <div class="position-relative rounded overflow-hidden">
+                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/mva-303749555-16x9_0.jpg?VersionId=plAS48hMcZi2SnnUbS7uqC_Yz6dcLM0t&size=690:388" class="img-zoomin img-fluid rounded w-100" alt="">
+                                            <div class="position-absolute text-white px-4 py-2 bg-dark rounded"
+                                                style="top: 20px; right: 20px;">
+                                                Politics
+                                            </div>
+                                        </div>
+                                        <div class="my-3">
+                                            <a href="https://www.indiatoday.in/india-today-insight/story/is-defeat-heat-stoking-mva-meltdown-2642823-2024-11-30"
+                                                class="h4">Is defeat heat stoking MVA meltdown?</a>
+                                        </div>
+                                        <p class="mt-4">Sections in the Shiv Sena (UBT) are against sticking together
+                                            with the Congress, whose leaders too favour their party going it alone for
+                                            the upcoming local body polls.Is the shock defeat of the Maha Vikas Aghadi
+                                            (MVA) in the Maharashtra assembly election—just 50 out of the total 288
+                                            seats—has had the rainbow coalition fraying at the edges? Voices from within
+                                            the Shiv Sena (Uddhav Balasaheb Thackeray) have called for a rethink on the
+                                            alliance with the Congress, while some Congress leaders want their party to
+                                            contest the local body elections on its own merit to re-energise the
+                                            grassroots cadre.
+                                        </p>
+                                        <div class="d-flex justify-content-between">
+                                            <a href="#" class="text-dark link-hover me-3"><i class="fa fa-clock"></i> 06
+                                                minute read</a>
+                                            <a href="#" class="text-dark link-hover me-3"><i class="fa fa-eye"></i> 3.5k
+                                                Views</a>
+                                            <a href="#" class="text-dark link-hover me-3"><i
+                                                    class="fa fa-comment-dots"></i> 05 Comment</a>
+                                            <a href="#" class="text-dark link-hover"><i class="fa fa-arrow-up"></i> 1.5k
+                                                Share</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="row g-4">
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/rajasthan-304417747-16x9_0.jpg?VersionId=8g8f3AdWqJ2rQPlKOFByZUhA5YeN_Uh0&size=690:388"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Politics</p>
+                                                            <a href="https://www.indiatoday.in/india-today-insight/story/why-moustache-is-suddenly-the-political-flavour-in-rajasthan-2642827-2024-11-30"
+                                                                class="h6">Why moustache is suddenly the
+                                                                political flavour in Rajasthan</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/congress-300447883-16x9_0.jpg?VersionId=SmQaKmvUu0O3dVgMeGcfYTyy1kRW0Zmw&size=690:388"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Politics</p>
+                                                            <a href="https://www.indiatoday.in/magazine/mandate-2024/story/20241209-congress-that-shrinking-feeling-2642269-2024-11-30"
+                                                                class="h6">Congress | That shrinking feeling</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/pm-modi-251223291-16x9_2.jpg?VersionId=KAstdO3_TxzWAj.03RnnHrcF9IV7tjmO&size=690:388"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Politics</p>
+                                                            <a href="https://www.indiatoday.in/india/video/opposition-spreading-propaganda-against-nda-pm-modi-2642433-2024-11-29"
+                                                                class="h6">Opposition spreading propaganda
+                                                                against NDA: PM ModiGet the best speak market, news.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/omar-abdullah-294332588-16x9_0.jpg?VersionId=r1el1ZJ.KJpfdY56VOqeVgzHKlI4giR6&size=690:388img/news-6.jpg"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Politics</p>
+                                                            <a href="https://www.indiatoday.in/magazine/up-front/story/20241209-jammu-kashmir-omar-abdullah-faces-a-quota-challenge-2642387-2024-11-29"
+                                                                class="h6">Jammu & Kashmir | Omar faces a quota
+                                                                challenge</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/hemant-soren-291406136-16x9_0.jpg?VersionId=Fi3RgpQgaAQfgdzBo17ZYh7iAAXK.LXc&size=690:388"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Politics</p>
+                                                            <a href="https://www.indiatoday.in/magazine/mandate-2024/story/20241209-how-hemant-soren-won-against-all-odds-2024-jharkhand-assembly-election-results-2642270-2024-11-29"
+                                                                class="h6">Jharkhand | How Hemant won against
+                                                                all odds.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- technology section -->
+                            <div id="tab-4" class="tab-pane fade show p-0">
+                                <div class="row g-4">
+                                    <div class="col-lg-8">
+                                        <div class="position-relative rounded overflow-hidden">
+                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/iqoo-13-095619162-16x9_0.jpg?VersionId=7anSSvzN2LIf3i_SE1.yT3a74Bew6SwA&size=690:388" class="img-zoomin img-fluid rounded w-100" alt="">
+                                            <div class="position-absolute text-white px-4 py-2 bg-dark rounded"
+                                                style="top: 20px; right: 20px;">
+                                                Technology
+                                            </div>
+                                        </div>
+                                        <div class="my-3">
+                                            <a href="https://www.indiatoday.in/technology/news/story/iqoo-13-india-price-leak-ahead-of-december-3-launch-event-2642434-2024-11-29"
+                                                class="h4">iQOO 13 India price range leak ahead of December 3
+                                                launch event</a>
+                                        </div>
+                                        <p class="mt-4">The iQOO 13 will launch in India next week and ahead of the
+                                            official event, the pre-offer price of the flagship device has leaked
+                                            online. The iQOO 13 will be announced on December 3 and will be seen
+                                            competing with the likes of the Realme GT 7 Pro, Vivo X200 and OnePlus 13.
+                                            iQOO 13: Specs, features
+                                            Since the iQOO 13 has launched in China, we know the possible specifications
+                                            for its Indian variant. The specs are mostly expected to remain the same as
+                                            the Chinese version.
+                                        </p>
+                                        <div class="d-flex justify-content-between">
+                                            <a href="#" class="text-dark link-hover me-3"><i class="fa fa-clock"></i> 06
+                                                minute read</a>
+                                            <a href="#" class="text-dark link-hover me-3"><i class="fa fa-eye"></i> 3.5k
+                                                Views</a>
+                                            <a href="#" class="text-dark link-hover me-3"><i
+                                                    class="fa fa-comment-dots"></i> 05 Comment</a>
+                                            <a href="#" class="text-dark link-hover"><i class="fa fa-arrow-up"></i> 1.5k
+                                                Share</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="row g-4">
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/india-uk-naval-agreement-29174417-16x9_0.jpeg?VersionId=1pEjRExUMLfNRcGK_VxlSYo4zVljTmtD&size=690:388"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Technology</p>
+                                                            <a href="https://www.indiatoday.in/india/story/india-united-kingdom-key-agreement-to-boost-electric-propulsion-technology-indian-navy-2642334-2024-11-29#:~:text=India%20and%20UK%20signed%20a,Thursday%2C%20November%2028%2C%202024."
+                                                                class="h6">India, UK ink key deal to boost
+                                                                electric propulsion technology for warships.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/samsung-galaxy-s24-fe-271613747-16x9.jpg?VersionId=PZ5i8ihXlf6tr6UPoeFpnWX9T61ExiD.&size=690:388"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Technology</p>
+                                                            <a href="https://www.indiatoday.in/technology/news/story/samsung-galaxy-s25-colour-options-leak-ahead-of-expected-launch-in-january-all-we-know-so-far-2642359-2024-11-29#:~:text=Samsung%20Galaxy%20S25%3A%20Colour%20leaked&text=The%20renders%20suggest%20that%20both,in%20the%20Galaxy%20S24%20lineup."
+                                                                class="h6">Samsung Galaxy S25 colour options
+                                                                leak ahead of expected launch in January: All we know so
+                                                                far</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://www.ctvnews.ca/content/dam/ctvnews/en/images/2024/11/23/-comedian--banana-art-1-7121375-1732413628646.jpg"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Technology</p>
+                                                            <a href="https://www.ctvnews.ca/entertainment/duct-taped-banana-artist-says-his-work-is-a-provocation-on-value-of-art-1.7121374"
+                                                                class="h6">Crypto entrepreneur eats banana
+                                                                artwork bought for $6.2m</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1248409893.jpg?q=w_1110,c_fill/f_webp"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Technology</p>
+                                                            <a href="https://www.bbc.com/reel/video/p0k79h46/how-new-fitness-technology-can-improve-life-expectancy#:~:text=A%20VO2%20max%20test%20is,cardio%20fitness%20and%20oxygen%20efficiency."
+                                                                class="h6">How new fitness technology can
+                                                                improve life expectancy</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/1e5f/live/0dd22160-addc-11ef-9729-51ed303e67d7.jpg.webp"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Technology</p>
+                                                            <a href="https://www.bbc.com/news/articles/cd7n1rx04l1o"
+                                                                class="h6">Canada watchdog sues Google over
+                                                                alleged anti-competitive conduct.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- fashion section -->
+                            <div id="tab-5" class="tab-pane fade show p-0">
+                                <div class="row g-4">
+                                    <div class="col-lg-8">
+                                        <div class="position-relative rounded overflow-hidden">
+                                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/2d5c/live/562d7220-ace2-11ef-92c5-85d8a8f7d550.png.webp" class="img-zoomin img-fluid rounded w-100" alt="">
+                                            <div class="position-absolute text-white px-4 py-2 bg-dark rounded"
+                                                style="top: 20px; right: 20px;">
+                                                Fashion
+                                            </div>
+                                        </div>
+                                        <div class="my-3">
+                                            <a href="https://www.bbc.com/news/articles/c5yrnzyj2j8o"
+                                                class="h4">Entrepreneur sets up sustainable fashion brand</a>
+                                        </div>
+                                        <p class="mt-4">Skills obtained by doing a Duke of Edinburgh's Award (DofE) is
+                                            being used to run a sustainable fashion brand, its owner said.
+
+                                            Freddie Jones from Hereford looked into ways to reduce damage caused by fast
+                                            fashion and began buying and selling second hand clothes through an online
+                                            vintage clothing platform.A chance meeting with clothing brand Superdry
+                                            founder led to a collaboation with Mr Jones, 20, now selling his stock in
+                                            the stores.
+
+                                            He said his course, at Cheltenham College, gave him the tools he needed to
+                                            succeed.
+                                        </p>
+                                        <div class="d-flex justify-content-between">
+                                            <a href="#" class="text-dark link-hover me-3"><i class="fa fa-clock"></i> 06
+                                                minute read</a>
+                                            <a href="#" class="text-dark link-hover me-3"><i class="fa fa-eye"></i> 3.5k
+                                                Views</a>
+                                            <a href="#" class="text-dark link-hover me-3"><i
+                                                    class="fa fa-comment-dots"></i> 05 Comment</a>
+                                            <a href="#" class="text-dark link-hover"><i class="fa fa-arrow-up"></i> 1.5k
+                                                Share</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="row g-4">
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://ichef.bbci.co.uk/images/ic/1376x774/p0k7jqjl.jpg"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Fashion</p>
+                                                            <a href="https://www.bbc.com/sport/videos/c78d29jv85mo"
+                                                                class="h6">Number nines never went out of
+                                                                fashion - Wood.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/6938/live/6a7d8260-a8d7-11ef-a85e-bf87622b8689.jpg.webp"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Fashion</p>
+                                                            <a href="https://www.bbc.com/news/articles/cly2eegv3r9o"
+                                                                class="h6">Fashion show to take place at tourist
+                                                                attraction.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/6938/live/6a7d8260-a8d7-11ef-a85e-bf87622b8689.jpg.webp"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Fashion</p>
+                                                            <a href="https://www.bbc.com/news/articles/c1dpxzv43xno#:~:text=A%20men's%20fashion%20archive%20could,than%2030%2C000%20suits%20a%20week."
+                                                                class="h6">GBurton factory scheme to include
+                                                                fashion archive.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://c.ndtvimg.com/2024-11/ss0r8epg_s_625x300_27_November_24.jpeg?im=FeatureCrop,algorithm=dnn,width=773,height=435"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Fashion</p>
+                                                            <a href="https://economictimes.indiatimes.com/markets"
+                                                                class="h6">Ananya Panday's sister, Rysa Panday will make her formal debut into society at the Le Bal Debutantes in Paris</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row g-4 align-items-center">
+                                                    <div class="col-5">
+                                                        <div class="overflow-hidden rounded">
+                                                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/img-25344311-16x9_0.jpg?VersionId=3OUcSDw8SE3Ke_.i2Aifx2DMDOeXEmTD&size=690:388"
+                                                                class="img-zoomin img-fluid rounded w-100" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-7">
+                                                        <div class="features-content d-flex flex-column">
+                                                            <p class="text-uppercase mb-2">Fashion</p>
+                                                            <a href="https://www.indiatoday.in/impact-feature/story/bollywood-superstar-ananya-panday-launches-new-york-institute-of-fashion-nif-global-in-india-2639585-2024-11-25"
+                                                                class="h6">Bollywood Superstar Ananya Panday
+                                                                Launches New York Institute of Fashion (NIF Global) in
+                                                                India.</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
+                                                                2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-bottom mb-4">
+                            <h2 class="my-4">News</h2>
+                        </div>
+                        <!-- what's new side section end -->
+
+                        <!-- Crousel start -->
+                        <div id="newsCarousel" class="carousel slide news-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- First Slide -->
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/iskcon-priest-arrest-bangladesh-300113460-16x9_0.jpg?VersionId=u6gc.VKrxGCOMeUB1g0QCWhQuk6HEF52&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="https://www.indiatoday.in/world/story/bangladesh-hindu-priest-arrested-iskcon-centre-vandalised-2642837-2024-11-30"
+                                                            class="h5">Iskcon claims another Hindu priest
+                                                            arrested in Bangladesh, centre vandalised.</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class="small text-body link-hover"> by Willium
+                                                                Smit</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/eknath-shinde-and-devendra-fadnavis-301225568-16x9.jpeg?VersionId=TJQ8nGYKPzlKmrdeC9ZO1Nx2QzAlGWUm&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="https://www.indiatoday.in/india/story/maharashtra-chief-minister-suspense-eknath-shinde-satara-upset-mahayuti-meeting-delhi-devendra-fadnavis-bjp-2642623-2024-11-30"
+                                                            class="h5">BJP sets date for Maharashtra oath as Mahayuti deadlock drags on: Sources</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class="small text-body link-hover">by Willium
+                                                                Smith</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/bangladesh-hindu-300035828-16x9_0.jpg?VersionId=ClJo0AYEJ52IXnDx0K.zBQlFjkRpVQ1h&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="#" class="h5">Cyclone Fengal landfall in hours, flights
+                                                            hit as rain pounds Chennai</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="https://www.indiatoday.in/india/story/cyclone-fengal-landfall-chennai-rain-imd-tamil-nadu-puducherry-flights-trains-affected-cancelled-airport-schools-college-closed-2642617-2024-11-30"
+                                                                class="small text-body link-hover">by Willium
+                                                                Smith</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Second Slide -->
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/bengalis-were-stereotypes-heavily-in-films-like-bhool-bhulaiyaa-and-gold-29401631-16x9_0.jpg?VersionId=joGcq40612Y94gRsTaOqSjlEvsH8BEW6&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="https://www.indiatoday.in/movies/bollywood/story/bengali-stereotyping-hindi-cinema-bhool-bhulaiyaa-rocky-aur-rani-gold-2642574-2024-11-30#:~:text=Hindi%20cinema%2C%20popularly%20referred%20to,with%20the%201968%20film%20Padosan."
+                                                            class="h5">Doing Bongs wrong: Bollywood's portrayal
+                                                            problem</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class="small text-body link-hover">by Willium
+                                                                Smith</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/bangladesh-hindu-300035828-16x9_0.jpg?VersionId=ClJo0AYEJ52IXnDx0K.zBQlFjkRpVQ1h&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="https://www.indiatoday.in/india/story/rashtriya-swayamsevak-sangh-urges-centre-to-mobilise-global-support-for-hindus-in-bangladesh-2642774-2024-11-30"
+                                                            class="h5">RSS urges Centre to mobilise global support for
+                                                            Hindus in Bangladesh</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class="small text-body link-hover">by Willium
+                                                                Smith</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/relations-between-india-and-canada-have-deteriorated-significantly-since-trudeaus-allegations-regar-030055300-16x9.jpeg?VersionId=2Bu76tq6iTQPk5O6SqvcXIHdML_Q4FbU&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="https://www.indiatoday.in/india/story/indian-consular-officials-canada-audio-video-surveillance-private-communications-intercepted-centre-parliament-2642203-2024-11-29"
+                                                            class="h5">Indian diplomats in Canada under surveillance, communications intercepted: Centre</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class="small text-body link-hover">by Willium
+                                                                Smith</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Carousel Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Popular news section -->
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="p-3 rounded border">
+                                    <h4 class="my-4">Popular News</h4>
+                                    <div class="row g-4">
+                                        <!--popular news -->
+                                        <div class="col-12 pop_sec">
+                                            <!-- Sports popular news -->
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="img/features-sports-1.jpg"
+                                                                class="img-zoomin img-fluid rounded-circle w-100"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Sports</p>
+                                                        <a href="https://indianexpress.com/article/sports/chess/world-chess-championship-2024-game-5-live-updates-fide-singapore-gukesh-dommaraju-vs-ding-liren-9698543/"
+                                                            class="h6">
+                                                            Gukesh forces draw after escaping from trouble
+                                                        </a>
+                                                        <small class="text-body d-block pop_date"><i
+                                                                class="fas fa-calendar-alt me-1"></i> December 9,
+                                                            2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 pop_sec">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="img/features-technology.jpg"
+                                                                class="img-zoomin img-fluid rounded-circle w-100"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Technology</p>
+                                                        <a href="https://indianexpress.com/article/technology/social/whatsapp-will-soon-let-users-scan-qr-codes-to-join-channels-9699004/"
+                                                            class="h6">
+                                                            WhatsApp will soon let users scan QR codes to join channels
+                                                        </a>
+                                                        <small class="text-body d-block pop_date"><i
+                                                                class="fas fa-calendar-alt me-1"></i> December 9,
+                                                            2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 pop_sec">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="img/features-fashion.jpg"
+                                                                class="img-zoomin img-fluid rounded-circle w-100"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Fashion</p>
+                                                        <a href="https://indianexpress.com/article/lifestyle/fashion/jaipur-maharani-gayatri-devi-chiffon-sari-evolution-history-revitalisation-authentic-chiffon-9687940/"
+                                                            class="h6">Chiffon's journey from Maharani
+                                                            Gayatri Devi's era to today.
+                                                        </a>
+                                                        <small class="text-body d-block pop_date"><i
+                                                                class="fas fa-calendar-alt me-1"></i> December 9,
+                                                            2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 pop_sec">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="img/features-life-style.jpg"
+                                                                class="img-zoomin img-fluid rounded-circle w-100"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Life Style</p>
+                                                        <a href="https://indianexpress.com/article/lifestyle/change-clothes-after-making-food-9691614/"
+                                                            class="h6">
+                                                            Curry controversy: Should you change clothes after cooking?
+                                                        </a>
+                                                        <small class="text-body d-block pop_date"><i
+                                                                class="fas fa-calendar-alt me-1"></i> December 9,
+                                                            2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- view more button -->
+                                        <div class="col-lg-12">
+                                            <a href="#"
+                                                class="link-hover btn border border-dark rounded-pill text-dark w-100 py-3 mb-4 view_more">View
+                                                More</a>
+                                        </div>
+
+                                        <!-- Trending Tags start -->
+                                        <div class="col-lg-12">
+                                            <div class="border-bottom my-3 pb-3">
+                                                <h4 class="mb-0">Trending Tags</h4>
+                                            </div>
+                                            <!--Tags start -->
+                                            <ul class="nav nav-pills text-center mb-4">
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        chref="#" data-category="lifestyle">
+                                                        <span class="tag_link_hover"
+                                                            style="width: 90px;">Lifestyle</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#" data-category="sports">
+                                                        <span class="tag_link_hover" style="width: 90px;">Sports</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#">
+                                                        <span class="tag_link_hover" style="width: 90px;"
+                                                            data-category="politics">Politics</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#">
+                                                        <span class="tag_link_hover" style="width: 90px;"
+                                                            data-category="magazine">Magazine</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#" data-category="game">
+                                                        <span class="tag_link_hover" style="width: 90px;">Game</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#" data-category="movie">
+                                                        <span class="tag_link_hover" style="width: 90px;">Movie</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#" data-category="travel">
+                                                        <span class="tag_link_hover" style="width: 90px;">Travel</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#" data-category="world">
+                                                        <span class="tag_link_hover" style="width: 90px;">World</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Most Populer News End -->
+
+    <!-- Footer -->
+    <footer class="hey footer text-white bg-dark py-3 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="footer-title">NewsBox</h5>
+                    <div class="social-icons d-flex gap-3 mt-3">
+                        <a href="https://www.instagram.com/daiictofficial/?hl=en"><i
+                                class="fab fa-instagram text-white"></i></a>
+                        <a href="https://x.com/daiict"><i class="fab fa-twitter text-white"></i></a>
+                        <a href="https://www.facebook.com/DAIICT/"><i class="fab fa-facebook text-white"></i></a>
+                        <a href="https://www.youtube.com/channel/UCVF7imL-YrGjnPaTFY--Sww"><i
+                                class="fab fa-youtube text-white"></i></a>
+                        <a href="https://www.daiict.ac.in/contact-0#"><i class="fas fa-envelope text-white"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex position-relative rounded-pill overflow-hidden">
+                        <input class="form-control border-0 w-75 py-3 rounded-pill" type="email"
+                            placeholder="example@gmail.com">
+                        <button type="submit" class="btn border-0 py-3 px-5 rounded-pill text-white position-absolute"
+                            style="background-color: black;
+                            top: 0;
+                            right: 0;">Subscribe Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-between">
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">World News</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=politics">Politics</a></li>
+                        <li><a href="page.html?category=economy">Economy</a></li>
+                        <li><a href="page.html?category=diplomacy">Diplomacy</a></li>
+                        <li><a href="page.html?category=conflicts">Conflicts</a></li>
+                        <li><a href="page.html?category=human-rights">Human Rights</a></li>
+                        <li><a href="page.html?category=environment">Environment</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Business</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=markets">Markets</a></li>
+                        <li><a href="page.html?category=companies">Companies</a></li>
+                        <li><a href="page.html?category=startups">Startups</a></li>
+                        <li><a href="page.html?category=technology">Technology</a></li>
+                        <li><a href="page.html?category=real-estate">Real Estate</a></li>
+                        <li><a href="page.html?category=cryptocurrency">Cryptocurrency</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Technology</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=innovation">Innovation</a></li>
+                        <li><a href="page.html?category=artificial-intelligence">Artificial Intelligence</a></li>
+                        <li><a href="page.html?category=gadgets">Gadgets</a></li>
+                        <li><a href="page.html?category=social-media">Social Media</a></li>
+                        <li><a href="page.html?category=cybersecurity">Cybersecurity</a></li>
+                        <li><a href="page.html?category=science">Science</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Entertainment</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=movies">Movies</a></li>
+                        <li><a href="page.html?category=television">Television</a></li>
+                        <li><a href="page.html?category=music">Music</a></li>
+                        <li><a href="page.html?category=celebrity">Celebrity</a></li>
+                        <li><a href="page.html?category=arts">Arts</a></li>
+                        <li><a href="page.html?category=culture">Culture</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Social Media</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=twitter-twists">Twitter twists</a></li>
+                        <li><a href="page.html?category=insta-news">Insta-nt news</a></li>
+                        <li><a href="page.html?category=trend-memes">Trend Memes</a></li>
+                        <li><a href="page.html?category=viral-videos">Viral Videos</a></li>
+                        <li><a href="page.html?category=hashtags">Hashtags</a></li>
+                        <li><a href="page.html?category=funny-videos">Funny videos</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">More</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=opinion">Opinion</a></li>
+                        <li><a href="page.html?category=health">Health</a></li>
+                        <li><a href="page.html?category=travel">Travel</a></li>
+                        <li><a href="page.html?category=style">Style</a></li>
+                        <li><a href="page.html?category=weather">Weather</a></li>
+                        <li><a href="page.html?category=newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+
+                <hr class="text-secondary">
+                <div class="text-center mt-3">
+                    <small>© 2024 NewsBox. All Rights Reserved. Use of this site constitutes acceptance of
+                        our
+                        Terms of Service, Privacy Policy, and Do Not Sell or Share My Personal Information.</small>
+                </div>
+            </div>
+    </footer>
+    <!-- Footer end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="/js/slider.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/backend.js"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- <script src="/js/backend2.js"></script> -->
+</body>
+
+</html>

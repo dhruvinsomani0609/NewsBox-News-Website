@@ -1,0 +1,204 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    /* Ensure logo and text are vertically aligned */
+}
+
+.logo img {
+    height: 7vh;
+    /* Responsive height for the image */
+}
+
+.logo h2 {
+    font-size: 2rem;
+    /* Adjust font size for better responsiveness */
+}
+
+/* Custom styling for the sidebar */
+.offcanvas {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+.sidebar-nav {
+    padding: 20px;
+}
+
+.nav-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: #808080;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.nav-link {
+    color: #ffffff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.nav-link i {
+    font-size: 20px;
+}
+
+.nav-link span {
+    font-size: 16px;
+}
+
+/* CSS to hide navbar items on small screens */
+@media (max-width: 986px) {
+    .navbar-nav {
+        display: none;
+        /* Hide the navbar items */
+    }
+}
+
+@media (max-width: 504px) {
+    .searchbox {
+        display: none;
+        /* Hide the search input */
+    }
+
+    .searchBtn {
+        display: inline-block;
+        /* Show the search icon */
+    }
+}
+
+/* Menu button styling */
+.menu-btn {
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.menu-btn i {
+    font-size: 24px;
+}
+
+/* Divider */
+.sidebar-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+}
+
+/*** Topbar Start ***/
+.sticky-top {
+    transition: 0.5s;
+    background: var(--bs-white);
+}
+
+.topbar {
+    padding: 10px 0;
+}
+
+.topbar .top-info {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 505px) {
+
+    .top-info i,
+    .trending,
+    #note img {
+        display: none;
+    }
+
+    .news-text {
+        font-size: initial;
+        line-height: 1.0;
+    }
+}
+
+@media (max-width: 430px) {
+
+    .top-info i,
+    .trending,
+    #note img {
+        display: none;
+    }
+
+    .news-text {
+        font-size: 0.6rem;
+        /* Adjust font size */
+        line-height: 1.0;
+        /* Adjust line height for better readability */
+    }
+}
+
+#note {
+    position: relative;
+    animation: noteAnimate 10s infinite;
+    animation-timing-function: ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes noteAnimate {
+    from {
+        left:-967px;
+    }
+
+    to {
+        left:967px;
+    }
+}
+
+/*** Topbar End ***/
+
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 14px;
+        padding: 15px 10px;
+    }
+
+    .top-news-label {
+        padding: 8px 10px;
+    }
+}
+
+/*** Features Start ***/
+.features {
+    width: 100%;
+    background: linear-gradient(rgba(26, 125, 255, 0.5), rgba(255, 255, 255, 0.3)), url(../img/features-background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*** Features End ***/

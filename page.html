@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- For .ico files -->
+
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="css/other_page.css">
+    <!-- <link rel="stylesheet" href="/css/footer.css"> -->
+    <style>
+        #google_translate_element {
+            height: 29px !important;
+            width: 110px;
+            line-height: 0px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+        }
+
+        #google_translate_element:hover {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-around  align-items-center">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="/img/logo.png" alt="logo">
+                <a href="index.html" class="navbar-brand">
+                    <h2>NewsBox</h2>
+                </a>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <div class="navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="navbarItem nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="politics">
+                                <a class="nav-link" data-category="chunav">Politics</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="sport">
+                                <a class="nav-link" data-category="sports">Sport</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="business">
+                                <a class="nav-link" data-category="business">Business</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="technology">
+                                <a class="nav-link" data-category="technology">Technology</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="health">
+                                <a class="nav-link" data-category="health">Health</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="education">
+                                <a class="nav-link" data-category="education">Education</a>
+                            </li>
+                        </ul>
+                        <div id="google_translate_element"
+                            style="height: 50px; line-height: 10px; overflow: hidden; padding: 0; margin: 0;"></div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Search Box -->
+            <input id="search-text" class="form-control me-2 searchbox" type="search" placeholder="Search Trending..."
+                aria-label="Search">
+            <button id="search-button" class="btn btn-outline-light me-3 searchBtn" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+
+            <!-- Menu Button -->
+            <div class="menudiv">
+                <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#newsSidebar"
+                    aria-controls="newsSidebar" type="button">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+
+
+            <!-- Offcanvas Sidebar -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="newsSidebar" aria-labelledby="newsSidebarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="newsSidebarLabel">News Categories</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <div class="sidebar-nav">
+                        <!-- News update Navigation -->
+                        <div class="section-title text-white">NEWS UPDATES</div>
+                        <div class="nav-section">
+                            <nav class="nav flex-row">
+                                <div class="section">
+                                    <a class="nav-link" data-category="live"><i class="ri-tv-line"></i><span>Live
+                                            TV</span></a>
+                                    <a class="nav-link" data-category="latest"><i
+                                            class="ri-article-line"></i><span>Latest</span></a>
+                                    <a class="nav-link" data-category="profit"><i
+                                            class="ri-line-chart-line"></i><span>Profit</span></a>
+                                    <a class="nav-link" data-category="cricket"><i
+                                            class="fas fa-basketball-ball"></i><span>Cricket</span></a>
+                                </div>
+                                <div class="section">
+                                    <a class="nav-link" data-category="india"><i
+                                            class="ri-map-pin-line"></i><span>India</span></a>
+                                    <a class="nav-link" data-category="video"><i
+                                            class="ri-video-line"></i><span>Video</span></a>
+                                    <a class="nav-link" data-category="movies"><i
+                                            class="ri-film-line"></i><span>Movies</span></a>
+                                    <a class="nav-link" data-category="cities"><i
+                                            class="ri-building-line"></i><span>Cities</span></a>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="sidebar-divider"></div>
+                        <!-- Featured Section -->
+                        <div class="section-title text-white">Featured</div>
+                        <div class="nav-section">
+                            <nav class="nav flex-row">
+                                <a class="nav-link" data-category="elections"><i
+                                        class="ri-government-line"></i><span>Elections</span></a>
+                                <a class="nav-link" data-category="opinion"><i
+                                        class="ri-chat-1-line"></i><span>Opinion</span></a>
+                                <a class="nav-link" data-category="trends"><i
+                                        class="ri-fire-line"></i><span>Trends</span></a>
+                                <a class="nav-link" data-category="notifications"><i
+                                        class="ri-notification-3-line"></i><span>Notifications</span></a>
+                                <a class="nav-link" data-category="web-stories"><i class="ri-pages-line"></i><span>Web
+                                        Stories</span></a>
+                                <a class="nav-link" data-category="feature"><i
+                                        class="ri-layout-grid-line"></i><span>Feature</span></a>
+                            </nav>
+
+                        </div>
+
+                        <div class="sidebar-divider"></div>
+                        <!-- More Links Section -->
+                        <div class="section-title text-white">More Links</div>
+                        <div class="nav-section">
+                            <nav class="nav flex-row">
+                                <a class="nav-link" data-category="agriculture"><i
+                                        class="ri-article-line"></i><span>Agriculture</span></a>
+                                <a class="nav-link" data-category="space"><i
+                                        class="ri-map-pin-line"></i><span>Space</span></a>
+                                <a class="nav-link" data-category="science"><i
+                                        class="ri-earth-line"></i><span>Science</span></a>
+                                <a class="nav-link" data-category="people"><i
+                                        class="ri-team-line"></i><span>People</span></a>
+                                <a class="nav-link" data-category="education"><i
+                                        class="ri-book-open-line"></i><span>Education</span></a>
+                                <a class="nav-link" data-category="food"><i
+                                        class="ri-restaurant-line"></i><span>Food</span></a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </header>
+
+
+    <main class="container">
+        <!-- Cards Container -->
+        <div id="cards-container" class="flex cards-container"></div>
+
+        <!-- News Card Template -->
+        <template id="template-news-card">
+            <div class="card">
+                <div class="card-header">
+                    <img id="news-img" alt="News Image">
+                </div>
+                <div class="card-content">
+                    <h2 id="news-title"></h2>
+                    <p id="news-desc"></p>
+                    <span id="news-source" class="news-source"></span>
+                </div>
+            </div>
+        </template>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white bg-dark py-3 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="footer-title">NewsBox</h5>
+                    <div class="social-icons d-flex gap-3 mt-3">
+                        <a href="https://www.instagram.com/daiictofficial/?hl=en"><i
+                                class="fab fa-instagram text-white"></i></a>
+                        <a href="https://x.com/daiict"><i class="fab fa-twitter text-white"></i></a>
+                        <a href="https://www.facebook.com/DAIICT/"><i class="fab fa-facebook text-white"></i></a>
+                        <a href="https://www.youtube.com/channel/UCVF7imL-YrGjnPaTFY--Sww"><i
+                                class="fab fa-youtube text-white"></i></a>
+                        <a href="https://www.daiict.ac.in/contact-0#"><i class="fas fa-envelope text-white"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex position-relative rounded-pill overflow-hidden">
+                        <input class="form-control border-0 w-75 py-3 rounded-pill" type="email"
+                            placeholder="example@gmail.com">
+                        <button type="submit"
+                            class="btn btn-primary border-0 py-3 px-5 rounded-pill text-white position-absolute"
+                            style="top: 0; right: 0;">Subscribe Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-between">
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">World News</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=politics">Politics</a></li>
+                        <li><a href="page.html?category=economy">Economy</a></li>
+                        <li><a href="page.html?category=diplomacy">Diplomacy</a></li>
+                        <li><a href="page.html?category=conflicts">Conflicts</a></li>
+                        <li><a href="page.html?category=human-rights">Human Rights</a></li>
+                        <li><a href="page.html?category=environment">Environment</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Business</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=markets">Markets</a></li>
+                        <li><a href="page.html?category=companies">Companies</a></li>
+                        <li><a href="page.html?category=startups">Startups</a></li>
+                        <li><a href="page.html?category=technology">Technology</a></li>
+                        <li><a href="page.html?category=real-estate">Real Estate</a></li>
+                        <li><a href="page.html?category=cryptocurrency">Cryptocurrency</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Technology</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=innovation">Innovation</a></li>
+                        <li><a href="page.html?category=artificial-intelligence">Artificial Intelligence</a></li>
+                        <li><a href="page.html?category=gadgets">Gadgets</a></li>
+                        <li><a href="page.html?category=social-media">Social Media</a></li>
+                        <li><a href="page.html?category=cybersecurity">Cybersecurity</a></li>
+                        <li><a href="page.html?category=science">Science</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Entertainment</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=movies">Movies</a></li>
+                        <li><a href="page.html?category=television">Television</a></li>
+                        <li><a href="page.html?category=music">Music</a></li>
+                        <li><a href="page.html?category=celebrity">Celebrity</a></li>
+                        <li><a href="page.html?category=arts">Arts</a></li>
+                        <li><a href="page.html?category=culture">Culture</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Social Media</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=twitter-twists">Twitter twists</a></li>
+                        <li><a href="page.html?category=insta-news">Insta-nt news</a></li>
+                        <li><a href="page.html?category=trend-memes">Trend Memes</a></li>
+                        <li><a href="page.html?category=viral-videos">Viral Videos</a></li>
+                        <li><a href="page.html?category=hashtags">Hashtags</a></li>
+                        <li><a href="page.html?category=funny-videos">Funny videos</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">More</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=opinion">Opinion</a></li>
+                        <li><a href="page.html?category=health">Health</a></li>
+                        <li><a href="page.html?category=travel">Travel</a></li>
+                        <li><a href="page.html?category=style">Style</a></li>
+                        <li><a href="page.html?category=weather">Weather</a></li>
+                        <li><a href="page.html?category=newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+
+                <hr class="text-secondary">
+                <div class="text-center mt-3">
+                    <small>© 2024 NewsBox. All Rights Reserved. Use of this site constitutes acceptance of
+                        our
+                        Terms of Service, Privacy Policy, and Do Not Sell or Share My Personal Information.</small>
+                </div>
+            </div>
+    </footer>
+    <!-- Footer end -->
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
+        }
+
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="js/backend.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html> 
