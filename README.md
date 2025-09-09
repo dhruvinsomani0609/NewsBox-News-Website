@@ -10,8 +10,6 @@ This project was developed as part of the **Human-Computer Interaction (HCI)** c
 - **Interactive Elements** such as hover effects and image highlights.
 - **Footer with Social Links** for improved user engagement.
 
-## 📂 Project Structure
-```
 HCI_Project/
 │── index.html               # Homepage
 │── page.html                # Sample category/news page
@@ -21,9 +19,17 @@ HCI_Project/
 │   ├── nav.css              # Custom navigation styles
 │   ├── other_page.css       # Styles for category pages
 │   ├── top_news.css         # Styles for top news section
+│── js/
+│   ├── bootstrap.bundle.min.js  # Bootstrap JavaScript
+│   └── main.js                  # Custom interactivity
+│── scss/
+│   ├── footer.scss          # SCSS for footer
+│   ├── nav.scss             # SCSS for navigation
+│   ├── other_page.scss      # SCSS for category pages
+│   ├── top_news.scss        # SCSS for news section
 │── img/                     # Images and assets
 │── favicon.ico              # Site favicon
-```
+
 
 ## 🚀 How to Run
 1. Clone the repository:
