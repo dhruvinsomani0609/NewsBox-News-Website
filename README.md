@@ -10,6 +10,8 @@ This project was developed as part of the **Human-Computer Interaction (HCI)** c
 - **Interactive Elements** such as hover effects and image highlights.
 - **Footer with Social Links** for improved user engagement.
 
+## 📂 Project Structure
+```
 HCI_Project/
 │── index.html               # Homepage
 │── page.html                # Sample category/news page
@@ -30,6 +32,7 @@ HCI_Project/
 │── img/                     # Images and assets
 │── favicon.ico              # Site favicon
 
+```
 
 ## 🚀 How to Run
 1. Clone the repository:
