@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsBox</title>
+
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- For .ico files -->
+
+        <!-- Include jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Include Owl Carousel CSS -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+        <!-- Include Owl Carousel JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <style>
+        #google_translate_element {
+            height: 35px !important;
+            width: 110px;
+            line-height: 0px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+        }
+
+        #google_translate_element:hover {
+            cursor: pointer;
+        }
+    </style>
+        <link rel="stylesheet" href="/css/nav.css">
+        <link rel="stylesheet" href="/css/top_news.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="css/other_page.css">
+        <link rel="stylesheet" href="css/google_translate.css">
+        <link rel="stylesheet" href="css/loading.css">
+    </head>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="hey bg-dark text-white py-3">
+        <div class="container d-flex justify-content-around  align-items-center">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="/img/logo.png" alt="logo">
+                <a href="index.html" class="navbar-brand">
+                    <h2>NewsBox</h2>
+                </a>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <div class="navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="navbarItem nav-item">
+                                <a class="nav-link" data-category="index.html" href="index.html">Home</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="politics">
+                                <a class="nav-link" data-category="national">Politics</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="sport">
+                                <a class="nav-link" data-category="sports">Sport</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="business">
+                                <a class="nav-link" data-category="business">Business</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="technology">
+                                <a class="nav-link" data-category="technology">Technology</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="health">
+                                <a class="nav-link" data-category="health">Health</a>
+                            </li>
+                            <li class="navbarItem nav-item" id="education">
+                                <a class="nav-link" data-category="education">Education</a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Search Box -->
+            <input id="search-text" class="form-control me-2 searchbox" type="search" placeholder="Search Trending..."
+                aria-label="Search">
+            <button id="search-button" class="btn btn-outline-light me-3 searchBtn" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+
+            <!-- Menu Button -->
+            <div class="menudiv">
+                <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#newsSidebar"
+                    aria-controls="newsSidebar" type="button">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+
+
+            <!-- Offcanvas Sidebar -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="newsSidebar" aria-labelledby="newsSidebarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="newsSidebarLabel">News Categories</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    
+                    <div class="sidebar-nav">
+                        <!-- News update Navigation -->
+                        <div class="section-title text-white">NEWS UPDATES</div>
+                        <div class="nav-section">
+                            <nav class="nav flex-row">
+                                <div class="section">
+                                    <a class="nav-link" data-category="live"><i class="ri-tv-line"></i><span>Live TV</span></a>
+                                    <a class="nav-link" data-category="latest"><i class="ri-article-line"></i><span>Latest</span></a>
+                                    <a class="nav-link" data-category="profit"><i class="ri-line-chart-line"></i><span>Profit</span></a>
+                                    <a class="nav-link" data-category="cricket"><i class="fas fa-basketball-ball"></i><span>Cricket</span></a>
+                                </div>
+                                <div class="section">
+                                    <a class="nav-link" data-category="india"><i class="ri-map-pin-line"></i><span>India</span></a>
+                                    <a class="nav-link" data-category="video"><i class="ri-video-line"></i><span>Video</span></a>
+                                    <a class="nav-link" data-category="movies"><i class="ri-film-line"></i><span>Movies</span></a>
+                                    <a class="nav-link" data-category="cities"><i class="ri-building-line"></i><span>Cities</span></a>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="sidebar-divider"></div>
+                        <!-- Featured Section -->
+                        <div class="section-title text-white">Featured</div>
+                        <div class="nav-section">
+                            <nav class="nav flex-row">
+                                <a class="nav-link" data-category="elections"><i class="ri-government-line"></i><span>Elections</span></a>
+                                <a class="nav-link" data-category="opinion"><i class="ri-chat-1-line"></i><span>Opinion</span></a>
+                                <a class="nav-link" data-category="trends"><i class="ri-fire-line"></i><span>Trends</span></a>
+                                <a class="nav-link" data-category="notifications"><i class="ri-notification-3-line"></i><span>Notifications</span></a>
+                                <a class="nav-link" data-category="web-stories"><i class="ri-pages-line"></i><span>Web Stories</span></a>
+                                <a class="nav-link" data-category="feature"><i class="ri-layout-grid-line"></i><span>Feature</span></a>
+                            </nav>
+                            
+                        </div>
+                
+                        <div class="sidebar-divider"></div>
+                        <!-- More Links Section -->
+                        <div class="section-title text-white">More Links</div>
+                        <div class="nav-section">
+                            <nav class="nav flex-row">
+                                    <a class="nav-link" data-category="agriculture"><i class="ri-article-line"></i><span>Agriculture</span></a>
+                                    <a class="nav-link" data-category="space"><i class="ri-map-pin-line"></i><span>Space</span></a>
+                                    <a class="nav-link" data-category="science"><i class="ri-earth-line"></i><span>Science</span></a>
+                                    <a class="nav-link" data-category="people"><i class="ri-team-line"></i><span>People</span></a>
+                                    <a class="nav-link" data-category="education"><i class="ri-book-open-line"></i><span>Education</span></a>
+                                    <a class="nav-link" data-category="food"><i class="ri-restaurant-line"></i><span>Food</span></a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </header>
+
+    <!-- Trending Topics Slider -->
+    <div class="hey container topbar bg-dark d-lg-block my-4 rounded-pill">
+        <div class="container px-4">
+            <div class="topbar-top d-flex justify-content-between flex-lg-wrap">
+                <div class="top-info d-flex align-items-center flex-grow-1">
+                    <span class="rounded-circle btn-sm-square bg-dark me-2">
+                        <i class="fas fa-bolt text-warning"></i>
+                    </span>
+                    <div class="pe-2 me-3 border-end border-white d-flex align-items-center">
+                        <p class="mb-0 text-white fs-6 fw-normal trending">Trending</p>
+                    </div>
+                    <div class="overflow-hidden flex-grow-1">
+                        <div id="note" class="ps-2">
+                            <img src="img/features-fashion.jpg"
+                                class="img-fluid rounded-circle border border-3 border-primary me-2"
+                                style="width: 30px; height: 30px;" alt="">
+                            <a href="#" class="text-white mb-0 link-hover">
+                                <p class="mb-0 news-text text-white">Will India gain as Trump points tariff bazooka at
+                                    China?</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Post Section Start -->
+    <div class="hey container-fluid py-3">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-7 col-xl-8 mt-0" id="main-post-section">
+                    <!-- Dynamic main post content will be loaded here -->
+                </div>
+
+                <!-- main post side section start -->
+                <div class="col-lg-5 col-xl-4 gap-3" id="sidebar-section">
+                    <!-- Dynamic sidebar content will be loaded here -->
+                </div>
+            </div>
+            <!-- main post side section end -->
+        </div>
+    </div>
+    <!-- Main Post Section End -->
+
+
+    <!-- Latest News Start -->
+    <div class="hey container-fluid latest-news pt-3 pb-4">
+        <div class="container">
+            <h2 class="mb-4">Latest News</h2>
+            <div class="latest-news-carousel owl-carousel">
+                <!-- Dynamic latest news content will be loaded here -->
+            </div>
+        </div>
+    </div>
+    <!-- Latest News End -->
+
+
+    <!-- Most Populer News Start -->
+    <div class="hey container-fluid populer-news py-3">
+        <div class="container py-5">
+            <div class="tab-class mb-4">
+                <div class="row g-4">
+                    <div class="col-lg-8 col-xl-9">
+                        <!-- What's new section -->
+                        <div class="d-flex flex-column flex-md-row justify-content-md-between border-bottom mb-4">
+                            <h1 class="mb-4">What’s New</h1>
+                            <!-- What' new list starts -->
+                            <ul class="nav nav-pills d-inline-flex text-center">
+                                <li class="nav-what-item mb-3">
+                                    <a class="d-flex py-2 bg-dark text-white rounded-pill active me-2"
+                                        data-bs-toggle="pill" href="#tab-1">
+                                        <span style="width: 100px;">Sports</span>
+                                    </a>
+                                </li>
+                                <li class="nav-what-item mb-3">
+                                    <a class="d-flex py-2 bg-light text-dark rounded-pill inactive me-2"
+                                        data-bs-toggle="pill" href="#tab-2">
+                                        <span style="width: 100px;">Business</span>
+                                    </a>
+                                </li>
+                                <li class="nav-what-item mb-3">
+                                    <a class="d-flex py-2 bg-light text-dark rounded-pill me-2" data-bs-toggle="pill"
+                                        href="#tab-3">
+                                        <span style="width: 100px;">Politics</span>
+                                    </a>
+                                </li>
+                                <li class="nav-what-item mb-3">
+                                    <a class="d-flex py-2 bg-light text-dark rounded-pill me-2" data-bs-toggle="pill"
+                                        href="#tab-4">
+                                        <span style="width: 100px;">Technology</span>
+                                    </a>
+                                </li>
+                                <li class="nav-what-item mb-3">
+                                    <a class="d-flex py-2 bg-light text-dark rounded-pill me-2" data-bs-toggle="pill"
+                                        href="#tab-5">
+                                        <span style="width: 100px;">Fashion</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content mb-4">
+                            <!-- sports section -->
+                            <div id="tab-1" class="tab-pane fade show p-0 active">
+                                <!-- Dynamic sports content will be loaded here -->
+                            </div>
+                            <!-- business section -->
+                            <div id="tab-2" class="tab-pane fade show p-0">
+                                <!-- Dynamic business content will be loaded here -->
+                            </div>
+                            <!-- politics section -->
+                            <div id="tab-3" class="tab-pane fade show p-0">
+                                <!-- Dynamic politics content will be loaded here -->
+                            </div>
+                            <!-- technology section -->
+                            <div id="tab-4" class="tab-pane fade show p-0">
+                                <!-- Dynamic technology content will be loaded here -->
+                            </div>
+                            <!-- fashion section -->
+                            <div id="tab-5" class="tab-pane fade show p-0">
+                                <!-- Dynamic fashion content will be loaded here -->
+                            </div>
+                        </div>
+                        <div class="border-bottom mb-4">
+                            <h2 class="my-4">News</h2>
+                        </div>
+                        <!-- what's new side section end -->
+
+                        <!-- Crousel start -->
+                        <div id="newsCarousel" class="carousel slide news-carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- First Slide -->
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/iskcon-priest-arrest-bangladesh-300113460-16x9_0.jpg?VersionId=u6gc.VKrxGCOMeUB1g0QCWhQuk6HEF52&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="https://www.indiatoday.in/world/story/bangladesh-hindu-priest-arrested-iskcon-centre-vandalised-2642837-2024-11-30"
+                                                            class="h5">Iskcon claims another Hindu priest
+                                                            arrested in Bangladesh, centre vandalised.</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class="small text-body link-hover"> by Willium
+                                                                Smit</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/eknath-shinde-and-devendra-fadnavis-301225568-16x9.jpeg?VersionId=TJQ8nGYKPzlKmrdeC9ZO1Nx2QzAlGWUm&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="https://www.indiatoday.in/india/story/maharashtra-chief-minister-suspense-eknath-shinde-satara-upset-mahayuti-meeting-delhi-devendra-fadnavis-bjp-2642623-2024-11-30"
+                                                            class="h5">BJP sets date for Maharashtra oath as Mahayuti deadlock drags on: Sources</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class="small text-body link-hover">by Willium
+                                                                Smith</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/bangladesh-hindu-300035828-16x9_0.jpg?VersionId=ClJo0AYEJ52IXnDx0K.zBQlFjkRpVQ1h&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="#" class="h5">Cyclone Fengal landfall in hours, flights
+                                                            hit as rain pounds Chennai</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="https://www.indiatoday.in/india/story/cyclone-fengal-landfall-chennai-rain-imd-tamil-nadu-puducherry-flights-trains-affected-cancelled-airport-schools-college-closed-2642617-2024-11-30"
+                                                                class="small text-body link-hover">by Willium
+                                                                Smith</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Second Slide -->
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/bengalis-were-stereotypes-heavily-in-films-like-bhool-bhulaiyaa-and-gold-29401631-16x9_0.jpg?VersionId=joGcq40612Y94gRsTaOqSjlEvsH8BEW6&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="https://www.indiatoday.in/movies/bollywood/story/bengali-stereotyping-hindi-cinema-bhool-bhulaiyaa-rocky-aur-rani-gold-2642574-2024-11-30#:~:text=Hindi%20cinema%2C%20popularly%20referred%20to,with%20the%201968%20film%20Padosan."
+                                                            class="h5">Doing Bongs wrong: Bollywood's portrayal
+                                                            problem</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class="small text-body link-hover">by Willium
+                                                                Smith</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/bangladesh-hindu-300035828-16x9_0.jpg?VersionId=ClJo0AYEJ52IXnDx0K.zBQlFjkRpVQ1h&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="https://www.indiatoday.in/india/story/rashtriya-swayamsevak-sangh-urges-centre-to-mobilise-global-support-for-hindus-in-bangladesh-2642774-2024-11-30"
+                                                            class="h5">RSS urges Centre to mobilise global support for
+                                                            Hindus in Bangladesh</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class="small text-body link-hover">by Willium
+                                                                Smith</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="latest-news-item">
+                                                <div class="bg-light rounded">
+                                                    <div class="rounded-top overflow-hidden">
+                                                        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/relations-between-india-and-canada-have-deteriorated-significantly-since-trudeaus-allegations-regar-030055300-16x9.jpeg?VersionId=2Bu76tq6iTQPk5O6SqvcXIHdML_Q4FbU&size=690:388"
+                                                            class="img-zoomin img-fluid rounded-top w-100" alt="">
+                                                    </div>
+                                                    <div class="d-flex flex-column p-4">
+                                                        <a href="https://www.indiatoday.in/india/story/indian-consular-officials-canada-audio-video-surveillance-private-communications-intercepted-centre-parliament-2642203-2024-11-29"
+                                                            class="h5">Indian diplomats in Canada under surveillance, communications intercepted: Centre</a>
+                                                        <div class="d-flex justify-content-between">
+                                                            <a href="#" class="small text-body link-hover">by Willium
+                                                                Smith</a>
+                                                            <small class="text-body d-block"><i
+                                                                    class="fas fa-calendar-alt me-1"></i>
+                                                                Dec 9, 2024</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Carousel Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Popular news section -->
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="p-3 rounded border">
+                                    <h4 class="my-4">Popular News</h4>
+                                    <div class="row g-4">
+                                        <!--popular news -->
+                                        <div class="col-12 pop_sec">
+                                            <!-- Sports popular news -->
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="img/features-sports-1.jpg"
+                                                                class="img-zoomin img-fluid rounded-circle w-100"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Sports</p>
+                                                        <a href="https://indianexpress.com/article/sports/chess/world-chess-championship-2024-game-5-live-updates-fide-singapore-gukesh-dommaraju-vs-ding-liren-9698543/"
+                                                            class="h6">
+                                                            Gukesh forces draw after escaping from trouble
+                                                        </a>
+                                                        <small class="text-body d-block pop_date"><i
+                                                                class="fas fa-calendar-alt me-1"></i> December 9,
+                                                            2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 pop_sec">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="img/features-technology.jpg"
+                                                                class="img-zoomin img-fluid rounded-circle w-100"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Technology</p>
+                                                        <a href="https://indianexpress.com/article/technology/social/whatsapp-will-soon-let-users-scan-qr-codes-to-join-channels-9699004/"
+                                                            class="h6">
+                                                            WhatsApp will soon let users scan QR codes to join channels
+                                                        </a>
+                                                        <small class="text-body d-block pop_date"><i
+                                                                class="fas fa-calendar-alt me-1"></i> December 9,
+                                                            2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 pop_sec">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="img/features-fashion.jpg"
+                                                                class="img-zoomin img-fluid rounded-circle w-100"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Fashion</p>
+                                                        <a href="https://indianexpress.com/article/lifestyle/fashion/jaipur-maharani-gayatri-devi-chiffon-sari-evolution-history-revitalisation-authentic-chiffon-9687940/"
+                                                            class="h6">Chiffon's journey from Maharani
+                                                            Gayatri Devi's era to today.
+                                                        </a>
+                                                        <small class="text-body d-block pop_date"><i
+                                                                class="fas fa-calendar-alt me-1"></i> December 9,
+                                                            2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 pop_sec">
+                                            <div class="row g-4 align-items-center features-item">
+                                                <div class="col-4">
+                                                    <div class="rounded-circle position-relative">
+                                                        <div class="overflow-hidden rounded-circle">
+                                                            <img src="img/features-life-style.jpg"
+                                                                class="img-zoomin img-fluid rounded-circle w-100"
+                                                                alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="features-content d-flex flex-column">
+                                                        <p class="text-uppercase mb-2">Life Style</p>
+                                                        <a href="https://indianexpress.com/article/lifestyle/change-clothes-after-making-food-9691614/"
+                                                            class="h6">
+                                                            Curry controversy: Should you change clothes after cooking?
+                                                        </a>
+                                                        <small class="text-body d-block pop_date"><i
+                                                                class="fas fa-calendar-alt me-1"></i> December 9,
+                                                            2024</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- view more button -->
+                                        <div class="col-lg-12">
+                                            <a href="#"
+                                                class="link-hover btn border border-dark rounded-pill text-dark w-100 py-3 mb-4 view_more">View
+                                                More</a>
+                                        </div>
+
+                                        <!-- Trending Tags start -->
+                                        <div class="col-lg-12">
+                                            <div class="border-bottom my-3 pb-3">
+                                                <h4 class="mb-0">Trending Tags</h4>
+                                            </div>
+                                            <!--Tags start -->
+                                            <ul class="nav nav-pills text-center mb-4">
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        chref="#" data-category="lifestyle">
+                                                        <span class="tag_link_hover"
+                                                            style="width: 90px;">Lifestyle</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#" data-category="sports">
+                                                        <span class="tag_link_hover" style="width: 90px;">Sports</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#">
+                                                        <span class="tag_link_hover" style="width: 90px;"
+                                                            data-category="politics">Politics</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#">
+                                                        <span class="tag_link_hover" style="width: 90px;"
+                                                            data-category="magazine">Magazine</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#" data-category="game">
+                                                        <span class="tag_link_hover" style="width: 90px;">Game</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#" data-category="movie">
+                                                        <span class="tag_link_hover" style="width: 90px;">Movie</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#" data-category="travel">
+                                                        <span class="tag_link_hover" style="width: 90px;">Travel</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item mb-3 ">
+                                                    <a class="trend_tag nav-link d-flex py-2 border border-dark  bg-light rounded-pill me-2"
+                                                        href="#" data-category="world">
+                                                        <span class="tag_link_hover" style="width: 90px;">World</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Most Populer News End -->
+
+    <!-- Footer -->
+    <footer class="hey footer text-white bg-dark py-3 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="footer-title">NewsBox</h5>
+                    <div class="social-icons d-flex gap-3 mt-3">
+                        <a href="https://www.instagram.com/daiictofficial/?hl=en"><i
+                                class="fab fa-instagram text-white"></i></a>
+                        <a href="https://x.com/daiict"><i class="fab fa-twitter text-white"></i></a>
+                        <a href="https://www.facebook.com/DAIICT/"><i class="fab fa-facebook text-white"></i></a>
+                        <a href="https://www.youtube.com/channel/UCVF7imL-YrGjnPaTFY--Sww"><i
+                                class="fab fa-youtube text-white"></i></a>
+                        <a href="https://www.daiict.ac.in/contact-0#"><i class="fas fa-envelope text-white"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="d-flex position-relative rounded-pill overflow-hidden">
+                        <input class="form-control border-0 w-75 py-3 rounded-pill" type="email"
+                            placeholder="example@gmail.com">
+                        <button type="submit" class="btn border-0 py-3 px-5 rounded-pill text-white position-absolute"
+                            style="background-color: black;
+                            top: 0;
+                            right: 0;">Subscribe Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 justify-content-between">
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">World News</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=politics">Politics</a></li>
+                        <li><a href="page.html?category=economy">Economy</a></li>
+                        <li><a href="page.html?category=diplomacy">Diplomacy</a></li>
+                        <li><a href="page.html?category=conflicts">Conflicts</a></li>
+                        <li><a href="page.html?category=human-rights">Human Rights</a></li>
+                        <li><a href="page.html?category=environment">Environment</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Business</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=markets">Markets</a></li>
+                        <li><a href="page.html?category=companies">Companies</a></li>
+                        <li><a href="page.html?category=startups">Startups</a></li>
+                        <li><a href="page.html?category=technology">Technology</a></li>
+                        <li><a href="page.html?category=real-estate">Real Estate</a></li>
+                        <li><a href="page.html?category=cryptocurrency">Cryptocurrency</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Technology</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=innovation">Innovation</a></li>
+                        <li><a href="page.html?category=artificial-intelligence">Artificial Intelligence</a></li>
+                        <li><a href="page.html?category=gadgets">Gadgets</a></li>
+                        <li><a href="page.html?category=social-media">Social Media</a></li>
+                        <li><a href="page.html?category=cybersecurity">Cybersecurity</a></li>
+                        <li><a href="page.html?category=science">Science</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Entertainment</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=movies">Movies</a></li>
+                        <li><a href="page.html?category=television">Television</a></li>
+                        <li><a href="page.html?category=music">Music</a></li>
+                        <li><a href="page.html?category=celebrity">Celebrity</a></li>
+                        <li><a href="page.html?category=arts">Arts</a></li>
+                        <li><a href="page.html?category=culture">Culture</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">Social Media</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=twitter-twists">Twitter twists</a></li>
+                        <li><a href="page.html?category=insta-news">Insta-nt news</a></li>
+                        <li><a href="page.html?category=trend-memes">Trend Memes</a></li>
+                        <li><a href="page.html?category=viral-videos">Viral Videos</a></li>
+                        <li><a href="page.html?category=hashtags">Hashtags</a></li>
+                        <li><a href="page.html?category=funny-videos">Funny videos</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <h6 class="footer-title">More</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="page.html?category=opinion">Opinion</a></li>
+                        <li><a href="page.html?category=health">Health</a></li>
+                        <li><a href="page.html?category=travel">Travel</a></li>
+                        <li><a href="page.html?category=style">Style</a></li>
+                        <li><a href="page.html?category=weather">Weather</a></li>
+                        <li><a href="page.html?category=newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+
+                <hr class="text-secondary">
+                <div class="text-center mt-3">
+                    <small>© 2024 NewsBox. All Rights Reserved. Use of this site constitutes acceptance of
+                        our
+                        Terms of Service, Privacy Policy, and Do Not Sell or Share My Personal Information.</small>
+                </div>
+            </div>
+    </footer>
+    <!-- Footer end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="/js/slider.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/backend.js"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- <script src="/js/backend2.js"></script> -->
+</body>
+
+</html>

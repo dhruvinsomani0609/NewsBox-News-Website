@@ -1,0 +1,134 @@
+/* Carousel Styles */
+.news-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.news-carousel .carousel-item {
+    padding: 20px;
+}
+.img-zoomin {
+    transition: transform 0.5s ease;
+}
+
+.img-zoomin:hover {
+    transform: scale(1.1);
+}
+
+.latest-news-item {
+    transition: transform 0.5s ease; /* Added transition for the news card */
+    border-radius: 0.5rem; /* Ensure border radius is consistent */
+    overflow: hidden; /* Prevent overflow on hover */
+}
+
+/* Scale up to 1.05 on hover */
+.latest-news-item:hover {
+    transform: scale(1.05) translateY(-5px); /* Scale up and move up */
+}
+
+/* Custom animation for left to right movement */
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+    display: block;
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+    transform: translateX(90%);
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+    transform: translateX(-100%);
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+    transition: transform 0.5s ease-in-out;
+}
+/* Carouels ends */
+
+.nav-what-item a.active{
+    background-color: black !important;
+    color: white !important;
+}
+/* Popular section start */
+
+.tag_link_hover{
+    color: black;
+}
+.pop_sec:hover{
+    transform: scale3d(1.1,1.08,2);
+    background-color:black;
+    color: white;
+    border-radius: 10px;
+}
+
+.pop_sec:hover .pop_date, .tag_link_hover:hover{
+    color: white !important;
+}
+.view_more:hover, .trend_tag:hover{
+    background-color:black !important;
+    color: white !important;
+    transform: scale(1.02) translateY(-2px);
+}
+
+/* Footer section */
+.footer {
+    background-color: #121212;
+    color: #b5b5b5;
+    font-size: 0.9rem;
+}
+
+.footer .footer-title {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer ul li a {
+    color: #b5b5b5;
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    color: #ffffff;
+}
+
+.footer .social-icons a {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.footer .social-icons a:hover {
+    color: #b5b5b5;
+}
+
+.footer hr {
+    border-color: #444444;
+}
+
+.footer form input.form-control {
+    background-color: #333333;
+    border: none;
+    color: #ffffff;
+}
+
+.footer form input.form-control::placeholder {
+    color: #b5b5b5;
+}
+
+.footer form button {
+    border-color: #b5b5b5;
+    color: #b5b5b5;
+}
+
+.footer form button:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
